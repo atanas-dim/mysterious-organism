@@ -45,8 +45,8 @@ function pAequorFactory(number, array) {
     compareDNA (anotherOrganism) {
       let identicalProperties = 0;
 
-      for(let x of this.dna) {
-          if (x === anotherOrganism.dna[x]) {
+      for(let i=0; i < this.dna.length; i++) {
+          if (this.dna[i] === anotherOrganism.dna[i]) {
             identicalProperties++;
           };
         };
@@ -79,6 +79,25 @@ function pAequorFactory(number, array) {
   
 };
 
+
+// Test compareDNA function
+/*
+const organism1 = pAequorFactory(1, [
+  'G', 'C', 'C', 'G',
+  'A', 'A', 'T', 'G',
+  'C', 'G', 'G', 'C',
+  'A', 'T', 'C'
+]);
+const organism2 = pAequorFactory(2, [
+  'G', 'C', 'C', 'G',
+  'A', 'A', 'T', 'G',
+  'C', 'G', 'G', 'C',
+  'A', 'T', 'A'
+]);
+
+console.log(organism1.compareDNA(organism2));
+*/
+
 // Function creates a batch of 30 specimen which can survive.
 function createBatchToSurvive () {
   const arrayOfOrganisms = [];
@@ -104,8 +123,8 @@ function createBatchToSurvive () {
 
 // Save a batch of 30 surviving organism as a variable
 const batch = (createBatchToSurvive());
-console.log('A batch of organisms that will survive');
-console.log(batch);
+// console.log('A batch of organisms that will survive');
+// console.log(batch);
 
 // Check if all items in the batch return true value to the survival test function to make sure the program has no bugs
 // for(let i = 0; i < 30; i++) {
