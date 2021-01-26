@@ -92,7 +92,7 @@ const organism2 = pAequorFactory(2, [
   'G', 'C', 'C', 'G',
   'A', 'A', 'T', 'G',
   'C', 'G', 'G', 'C',
-  'A', 'T', 'A'
+  'A', 'A', 'A'
 ]);
 
 console.log(organism1.compareDNA(organism2));
@@ -123,8 +123,8 @@ function createBatchToSurvive () {
 
 // Save a batch of 30 surviving organism as a variable
 const batch = (createBatchToSurvive());
-// console.log('A batch of organisms that will survive');
-// console.log(batch);
+console.log('A batch of organisms that will survive');
+console.log(batch);
 
 // Check if all items in the batch return true value to the survival test function to make sure the program has no bugs
 // for(let i = 0; i < 30; i++) {
