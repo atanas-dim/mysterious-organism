@@ -43,15 +43,15 @@ function pAequorFactory(number, array) {
     // Function to compare the current organism's DNA to another one. Function saves the common DNA bases in an array 
     // and returns the percentage of identical DNA.
     compareDNA (anotherOrganism) {
-      let identicalProperties = [];
-    
-      for(let i = 0; i < organism1.dna.length; i++) {
-        if (organism1.dna[i] === anotherOrganism.dna[i]) {
-          identicalProperties.push(organism1.dna[i]);
+      let identicalProperties = 0;
+
+      for(let x of this.dna) {
+          if (x === anotherOrganism.dna[x]) {
+            identicalProperties++;
+          };
         };
-      };
     
-      let percentage = Math.floor(identicalProperties.length / this.dna.length * 100);
+      let percentage = Math.floor(identicalProperties / this.dna.length * 100);
       let alertMessage = `Specimen ${this.specimenNum} and specimen ${anotherOrganism.specimenNum} have ${percentage}% identical DNAs.`; 
     
       return alertMessage;
